@@ -1,0 +1,1 @@
+from housing.components.data_ingestion import DataIngestion

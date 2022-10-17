@@ -1,4 +1,12 @@
-# DVC - DL - TF - demo
+# California Housing Prediction
+
+This project utilizes the dataset on california housing to predict on the median house value of the data.
+It'll be a structured and clean end-to-end implementation.
+
+## Dataset
+https://www.dcc.fc.up.pt/~ltorgo/Regression/cal_housing.tgz
+
+
 
 ## commands - 
 
