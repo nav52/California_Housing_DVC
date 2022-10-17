@@ -8,6 +8,6 @@ stages:
       - src/housing/entity/config_entity.py
       - configs/config.yaml
     outs:
-      - artifacts/data_ingestion/data.zip
+      - artifacts/data_ingestion/
 
 ## update as per your requirements
