@@ -1,11 +1,11 @@
 stages:
   data_ingestion:
-    cmd: python src/deepClassifier/pipeline/stage_01_data_ingestion.py
+    cmd: python src/housing/pipeline/stage_01_data_ingestion.py
     deps: 
-      - src/deepClassifier/pipeline/stage_01_data_ingestion.py
-      - src/deepClassifier/components/data_ingestion.py
-      - src/deepClassifier/config/configuration.py
-      - src/deepClassifier/entity/config_entity.py
+      - src/housing/pipeline/stage_01_data_ingestion.py
+      - src/housing/components/data_ingestion.py
+      - src/housing/config/configuration.py
+      - src/housing/entity/config_entity.py
       - configs/config.yaml
     outs:
       - artifacts/data_ingestion/data.zip

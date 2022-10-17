@@ -1,1 +1,1 @@
-from housing.entity.data_ingestion import DataIngestionConfig
+from housing.entity.config_entity import DataIngestionConfig
