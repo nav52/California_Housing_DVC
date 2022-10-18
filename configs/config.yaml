@@ -6,3 +6,9 @@ data_ingestion:
   tar_filepath: artifacts/data_ingestion/housing.tgz
   untar_filepath: artifacts/data_ingestion/
   prepared_datapath: artifacts/data_ingestion/raw_data.csv
+
+data_process:
+  root_dir: artifacts/data_process
+  data_filepath: artifacts/data_ingestion/raw_data.csv
+  scaled_pickle_file: artifacts/data_process/scaler.pkl
+  

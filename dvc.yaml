@@ -10,4 +10,13 @@ stages:
     outs:
       - artifacts/data_ingestion/
 
-## update as per your requirements
+  data_process:
+    cmd: python src/housing/pipeline/stage_02_data_process.py
+    deps:
+      - src/housing/pipeline/stage_02_data_process.py
+      - src/housing/components/data_process.py
+      - src/housing/config/configuration.py
+      - src/housing/entity/config_entity.py
+      - configs/config.yaml
+    outs:
+      - artifacts/data_process/

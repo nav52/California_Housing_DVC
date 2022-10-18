@@ -1,7 +1,7 @@
 from pathlib import Path
 from housing.utils import read_yaml, create_directories
 from housing.constants import CONFIG_FILE_PATH, PARAMS_FILE_PATH
-from housing.entity import DataIngestionConfig
+from housing.entity import DataIngestionConfig, DataProcessConfig
 
 class ConfigurationManager:
     def __init__(
@@ -24,3 +24,13 @@ class ConfigurationManager:
             prepared_datapath=config.prepared_datapath
         )
         return data_ingestion_config
+    
+    def get_data_process_config(self):
+        config = self.config.data_process
+        create_directories([config.root_dir])
+        data_process_config = DataProcessConfig(
+            root_dir=config.root_dir,
+            data_filepath=config.data_filepath,
+            scaled_pickle_file=config.scaled_pickle_file
+        )
+        return data_process_config

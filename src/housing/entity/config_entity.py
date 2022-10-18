@@ -9,3 +9,9 @@ class DataIngestionConfig:
     tar_filepath: Path
     untar_filepath: Path
     prepared_datapath: Path
+
+@dataclass(frozen=True)
+class DataProcessConfig:
+    root_dir: Path
+    data_filepath: Path
+    scaled_pickle_file: Path
