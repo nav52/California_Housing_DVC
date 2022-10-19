@@ -13,6 +13,7 @@ stages:
   data_process:
     cmd: python src/housing/pipeline/stage_02_data_process.py
     deps:
+      - artifacts/data_ingestion/
       - src/housing/pipeline/stage_02_data_process.py
       - src/housing/components/data_process.py
       - src/housing/config/configuration.py
@@ -24,6 +25,7 @@ stages:
   model_train:
     cmd: python src/housing/pipeline/stage_03_model_train.py
     deps:
+      - artifacts/data_process/
       - src/housing/pipeline/stage_03_model_train.py
       - src/housing/components/model_train.py
       - src/housing/config/configuration.py

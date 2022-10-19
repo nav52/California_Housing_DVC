@@ -4,17 +4,17 @@ stages:
     cmd: python src/housing/pipeline/stage_01_data_ingestion.py
     deps:
     - path: configs/config.yaml
-      md5: 0fc7e2e151801dc4dc8e1732989fadde
-      size: 488
+      md5: bcb32bf63bf7773748f36e03a44f93a3
+      size: 1116
     - path: src/housing/components/data_ingestion.py
       md5: 31a2f9ce5c2b4c3aa7303f7b35638ef1
       size: 933
     - path: src/housing/config/configuration.py
-      md5: a6cc5dd2c604be0f4b0b9e00d2c25104
-      size: 1402
+      md5: 69e09b575871321dd93e3bc95af1f1a9
+      size: 2253
     - path: src/housing/entity/config_entity.py
-      md5: 9c47c8350e9617ea3071c7fb5677969c
-      size: 366
+      md5: 929799ce89e2509b67bfe1041996953c
+      size: 699
     - path: src/housing/pipeline/stage_01_data_ingestion.py
       md5: 7d25f47aff72e9df357cf7a4013edeb1
       size: 363
@@ -26,23 +26,54 @@ stages:
   data_process:
     cmd: python src/housing/pipeline/stage_02_data_process.py
     deps:
+    - path: artifacts/data_ingestion/
+      md5: 224c4d38d7743f8da95d5beedb41a1f9.dir
+      size: 3771784
+      nfiles: 4
     - path: configs/config.yaml
-      md5: 0fc7e2e151801dc4dc8e1732989fadde
-      size: 488
+      md5: bcb32bf63bf7773748f36e03a44f93a3
+      size: 1116
     - path: src/housing/components/data_process.py
-      md5: 274c7a9152a3502f72b914546fd70b7e
-      size: 872
+      md5: 8fa67b67e3d90ad6a2de1a991bc185fc
+      size: 1267
     - path: src/housing/config/configuration.py
-      md5: a6cc5dd2c604be0f4b0b9e00d2c25104
-      size: 1402
+      md5: 69e09b575871321dd93e3bc95af1f1a9
+      size: 2253
     - path: src/housing/entity/config_entity.py
-      md5: 9c47c8350e9617ea3071c7fb5677969c
-      size: 366
+      md5: 929799ce89e2509b67bfe1041996953c
+      size: 699
     - path: src/housing/pipeline/stage_02_data_process.py
-      md5: 7c384b8489d02b32e9600ca7d60f00c9
-      size: 350
+      md5: 4395f1bdeb3ad504b853ce9acc7a6c22
+      size: 382
     outs:
     - path: artifacts/data_process/
-      md5: 84a514304dfff24cbb57a1b2db5440df.dir
-      size: 840
+      md5: 547842eb16bf15281f855a131051f58a.dir
+      size: 4759336
+      nfiles: 5
+  model_train:
+    cmd: python src/housing/pipeline/stage_03_model_train.py
+    deps:
+    - path: artifacts/data_process/
+      md5: 547842eb16bf15281f855a131051f58a.dir
+      size: 4759336
+      nfiles: 5
+    - path: configs/config.yaml
+      md5: bcb32bf63bf7773748f36e03a44f93a3
+      size: 1116
+    - path: src/housing/components/model_train.py
+      md5: bf5914c9ee423202ad81ddcf7b3c9687
+      size: 736
+    - path: src/housing/config/configuration.py
+      md5: 69e09b575871321dd93e3bc95af1f1a9
+      size: 2253
+    - path: src/housing/entity/config_entity.py
+      md5: 929799ce89e2509b67bfe1041996953c
+      size: 699
+    - path: src/housing/pipeline/stage_03_model_train.py
+      md5: c62231e41cc84273ccab60b2a50a143d
+      size: 316
+    outs:
+    - path: artifacts/model_train/
+      md5: 88606fc5e315336707cfc583a585ac25.dir
+      size: 556
       nfiles: 1

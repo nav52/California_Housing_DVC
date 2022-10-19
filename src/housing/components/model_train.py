@@ -9,8 +9,10 @@ class ModelTrain:
         self.config = config
     
     def read_train_data(self):
-        self.X_train = loadtxt(self.config.train_X_datapath, delimiter=',')
-        self.y_train = loadtxt(self.config.train_y_datapath, delimiter=',')
+        train_X_datapath = self.config.train_X_datapath
+        train_y_datapath = self.config.train_y_datapath
+        self.X_train = loadtxt(train_X_datapath, delimiter=',')
+        self.y_train = loadtxt(train_y_datapath, delimiter=',')
 
     def train_model(self):
         self.reg_model_1 = LinearRegression()

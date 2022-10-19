@@ -43,10 +43,11 @@ class ConfigurationManager:
 
     def get_model_train_config(self):
         config = self.config.model_train
-        create_directories([config.model_train])
+        create_directories([config.root_dir])
         model_train_config = ModelTrainConfig(
             root_dir=config.root_dir,
             train_X_datapath=config.train_X_datapath,
             train_y_datapath=config.train_y_datapath,
             model_1_pickle_file=config.model_1_pickle_file
         )
+        return model_train_config
