@@ -11,4 +11,16 @@ data_process:
   root_dir: artifacts/data_process
   data_filepath: artifacts/data_ingestion/raw_data.csv
   scaled_pickle_file: artifacts/data_process/scaler.pkl
+  training_data_filepath: artifacts/data_process/train_data/
+  test_data_filepath: artifacts/data_process/test_data/
+  train_X_datapath: artifacts/data_process/train_data/train_X.csv
+  train_y_datapath: artifacts/data_process/train_data/train_y.csv
+  test_X_datapath: artifacts/data_process/test_data/test_X.csv
+  test_y_datapath: artifacts/data_process/test_data/test_y.csv
+
+model_train:
+  root_dir: artifacts/model_train
+  train_X_datapath: artifacts/data_process/train_data/train_X.csv
+  train_y_datapath: artifacts/data_process/train_data/train_y.csv
+  model_1_pickle_file: artifacts/model_train/reg_model_1.pkl
   

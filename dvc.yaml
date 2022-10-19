@@ -20,3 +20,14 @@ stages:
       - configs/config.yaml
     outs:
       - artifacts/data_process/
+
+  model_train:
+    cmd: python src/housing/pipeline/stage_03_model_train.py
+    deps:
+      - src/housing/pipeline/stage_03_model_train.py
+      - src/housing/components/model_train.py
+      - src/housing/config/configuration.py
+      - src/housing/entity/config_entity.py
+      - configs/config.yaml
+    outs:
+      - artifacts/model_train/

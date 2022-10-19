@@ -1,5 +1,6 @@
 import pandas as pd
 import pickle
+from numpy import savetxt
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
 
@@ -19,8 +20,14 @@ class DataProcess:
 
     def transform_data(self):
         self.scaler=StandardScaler()
-        self.scaler.fit_transform(self.X_train)
-        self.scaler.transform(self.X_test)
+        self.X_train = self.scaler.fit_transform(self.X_train)
+        self.X_testy = self.scaler.transform(self.X_test)
 
     def save_scaler_pickle(self):
         pickle.dump(self.scaler, open(self.config.scaled_pickle_file, 'wb'))
+    
+    def save_split_data(self):
+        savetxt(self.config.train_X_datapath, self.X_train, delimiter=',')
+        savetxt(self.config.test_X_datapath, self.X_test, delimiter=',')
+        savetxt(self.config.train_y_datapath, self.y_train, delimiter=',')
+        savetxt(self.config.test_y_datapath, self.y_test, delimiter=',')
