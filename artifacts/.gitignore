@@ -1,3 +1,4 @@
 /data_ingestion
 /data_process
 /model_train
+/model_evaluation

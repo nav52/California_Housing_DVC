@@ -21,7 +21,7 @@ class DataProcess:
     def transform_data(self):
         self.scaler=StandardScaler()
         self.X_train = self.scaler.fit_transform(self.X_train)
-        self.X_testy = self.scaler.transform(self.X_test)
+        self.X_test = self.scaler.transform(self.X_test)
 
     def save_scaler_pickle(self):
         pickle.dump(self.scaler, open(self.config.scaled_pickle_file, 'wb'))

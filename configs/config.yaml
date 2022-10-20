@@ -23,4 +23,10 @@ model_train:
   train_X_datapath: artifacts/data_process/train_data/train_X.csv
   train_y_datapath: artifacts/data_process/train_data/train_y.csv
   model_1_pickle_file: artifacts/model_train/reg_model_1.pkl
-  
+
+model_evaluation:
+  root_dir: artifacts/model_evaluation
+  model_1_pickle_file: artifacts/model_train/reg_model_1.pkl
+  test_X_datapath: artifacts/data_process/test_data/test_X.csv
+  test_y_datapath: artifacts/data_process/test_data/test_y.csv
+  scores_file: artifacts/model_evaluation/scores.json

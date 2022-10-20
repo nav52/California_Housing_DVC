@@ -28,3 +28,11 @@ class ModelTrainConfig:
     train_X_datapath: Path
     train_y_datapath: Path
     model_1_pickle_file: Path
+
+@dataclass(frozen=True)
+class ModelEvalConfig:
+    root_dir: Path
+    model_1_pickle_file: Path
+    test_X_datapath: Path
+    test_y_datapath: Path
+    scores_file: Path

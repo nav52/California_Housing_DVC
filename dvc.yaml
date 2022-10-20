@@ -33,3 +33,15 @@ stages:
       - configs/config.yaml
     outs:
       - artifacts/model_train/
+
+  model_evaluation:
+    cmd: python src/housing/pipeline/stage_04_model_evaluation.py
+    deps:
+      - artifacts/model_train/
+      - src/housing/pipeline/stage_04_model_evaluation.py
+      - src/housing/components/model_evaluation.py
+      - src/housing/config/configuration.py
+      - src/housing/entity/config_entity.py
+      - configs/config.yaml
+    outs:
+      - artifacts/model_evaluation/

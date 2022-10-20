@@ -1,3 +1,4 @@
 from housing.components.data_ingestion import DataIngestion
 from housing.components.data_process import DataProcess
 from housing.components.model_train import ModelTrain
+from housing.components.model_evaluation import ModelEvaluation
